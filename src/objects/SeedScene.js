@@ -1,6 +1,6 @@
 import { Group } from "three";
 import { TestObj } from "./TestObj";
-import {BasicLights} from "./Lights";
+import { BasicLights } from "./Lights";
 
 export class SeedScene extends Group {
   constructor() {
@@ -11,6 +11,6 @@ export class SeedScene extends Group {
   }
 
   update(ts) {
-    this.testObj.rotateY(0.01)
+    this.testObj.rotation.set(ts / 1000, ts / 1000, - ts / 1000)
   }
 }

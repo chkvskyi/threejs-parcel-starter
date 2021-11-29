@@ -1,12 +1,12 @@
-import { BoxGeometry, Group, Mesh, MeshLambertMaterial } from "three"
+import { Group, Mesh, MeshStandardMaterial, TorusKnotGeometry } from "three"
 
 export class TestObj extends Group {
   constructor() {
     super();
 
-    const cubeGeo = new BoxGeometry(1, 1, 1);
-    const cubeMat = new MeshLambertMaterial({ color: 0x78226d });
+    const torusGeometry = new TorusKnotGeometry(1, .5, 128, 32);
+    const torusMaterial = new MeshStandardMaterial({ color: 'purple' });
 
-    this.add(new Mesh(cubeGeo, cubeMat));
+    this.add(new Mesh(torusGeometry, torusMaterial));
   }
 }
